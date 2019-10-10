@@ -11,6 +11,8 @@ gem 'factory_bot_rails'
 gem 'active_model_serializers'
 # To be used for pagination
 gem 'kaminari'
+#Ruby toolkit for the GitHub API
+gem 'octokit', '~> 4.0'
 
 gem 'sqlite3'
 # Use Puma as the app server
