@@ -9,6 +9,8 @@ gem 'rails', '~> 5.2.3'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'active_model_serializers'
+# To be used for pagination
+gem 'kaminari'
 
 gem 'sqlite3'
 # Use Puma as the app server
