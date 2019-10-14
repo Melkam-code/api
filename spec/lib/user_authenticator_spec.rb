@@ -36,9 +36,16 @@ describe UserAuthenticator do
         allow_any_instance_of(Octokit::Client).to receive(
           :user).and_return(user_data)
       end
+
       it 'should save the user when doesnt exist' do
         expect{ subject }.to change{ User.count }.by(1)
         expect(User.last.name).to eq('kartoon black')
+      end
+
+      it 'should reuse already registered user' do
+        user = create :user, user_data
+        expect{ subject }.not_to change{ User.count }
+        expect(authenticator.user).to eq(user)
       end
     end
   end

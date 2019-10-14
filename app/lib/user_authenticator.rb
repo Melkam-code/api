@@ -19,7 +19,11 @@ class UserAuthenticator
     else
       user_client = Octokit::Client.new(access_token: token)
       user_data = user_client.user.to_h.slice(:login, :avatar_url, :url, :name)
+      @user = if User.exists?(login: user_data[:login])
+        User.find_by(login: user_data[:login])
+      else
       User.create(user_data.merge(provider: 'github'))
+    end
    end
   end
 
