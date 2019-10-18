@@ -54,7 +54,7 @@ RSpec.describe AccessTokensController, type: :controller do
 
      describe 'DELETE #destroy' do
        subject{ delete :destroy }
-
+  
        context 'when no authorization header provided' do
        it_behaves_like 'forbidden_requests'
        end
