@@ -33,7 +33,7 @@ shared_examples_for "forbidden_requests" do
 
   it 'should return 403 status code' do
     subject
-    expect(response).to have_http_status(:forbidden)
+    expect(response).to have_http_status(403)
   end
 
   it 'should return proper error json' do
